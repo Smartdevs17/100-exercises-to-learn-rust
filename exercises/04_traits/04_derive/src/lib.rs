@@ -8,11 +8,20 @@
 // print both sides of the comparison to the terminal.
 // If the compared type doesn't implement `Debug`, it doesn't know how to represent them!
 
-#[derive(PartialEq)]
+#[derive(Debug, PartialEq)]
 struct Ticket {
     title: String,
     description: String,
     status: String,
+}
+
+impl Ticket {
+    fn debug(&self) -> String {
+        format!(
+            "Ticket {{ title: {:?}, description: {:?}, status: {:?} }}",
+            self.title, self.description, self.status
+        )
+    }
 }
 
 #[cfg(test)]
