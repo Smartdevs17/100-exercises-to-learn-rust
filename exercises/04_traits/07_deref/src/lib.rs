@@ -18,6 +18,10 @@ impl Ticket {
     pub fn description(&self) -> &str {
         return &self.description.trim();
     }
+
+    pub fn status(&self) -> &str {
+        return &self.status.trim();
+    }
 }
 
 #[cfg(test)]
